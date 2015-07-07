@@ -50,10 +50,10 @@
     height: 300px;
 
     .card-image {
-      height: 150px;
+      max-height: 150px;
     }
     .card-content {
-      height: 150px;
+      max-height: 300px;
     }
 
   }
@@ -62,10 +62,10 @@
     height: 400px;
 
     .card-image {
-      height: 250px;
+      max-height: 250px;
     }
     .card-content {
-      height: 150px;
+      max-height: 400px;
     }
   }
 
@@ -73,10 +73,10 @@
     height: 500px;
 
     .card-image {
-      height: 330px;
+      max-height: 330px;
     }
     .card-content {
-      height: 170px;
+      max-height: 500px;
     }
   }
 
@@ -121,7 +121,19 @@
   .card-action {
     border-top: 1px solid rgba(160,160,160,.2);
     padding: $card-padding;
-
+    
+    @media only screen and (min-width: 0) {
+      min-height: 2 * $card-padding + 1.5 * $small-screen-font-size + 1;
+    }
+  
+    @media only screen and (min-width: $medium-screen) {
+      min-height: 2 * $card-padding + 1.5 * $medium-screen-font-size + 1;
+    }
+  
+    @media only screen and (min-width: $large-screen) {
+      min-height: 2 * $card-padding + 1.5 * $large-screen-font-size + 1;
+    }
+    
     a {
       color: $card-link-color;
       margin-right: $card-padding;
